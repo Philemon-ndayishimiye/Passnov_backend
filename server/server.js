@@ -25,7 +25,7 @@ app.use('/api/category' , categoryRoutes);
   await dbconn(); 
 
   
-  app.use('/', ()=>{
+  app.use('/', (req,res)=>{
     res.json('HELLO PASSINOVE SERVER')
   })
   app.listen(port, () => {
