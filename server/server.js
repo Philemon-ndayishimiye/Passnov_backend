@@ -3,6 +3,8 @@ const express = require('express');
 
 const app = express();
 
+const cors = require('cors')
+
 const dbconn = require('./dbconfig/db');
 
 const suggestRoutes = require('./Routes/TaskRoutes');
@@ -17,6 +19,7 @@ const port = process.env.PORT;
 
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/suggest' , suggestRoutes);
 app.use('/api/category' , categoryRoutes);
